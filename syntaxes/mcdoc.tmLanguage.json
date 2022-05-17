@@ -1,0 +1,80 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "mcdoc",
+	"scopeName": "source.mcdoc",
+	"patterns": [
+		{
+			"name": "keyword.control",
+			"match": "\\b(type|struct|enum)\\b"
+		},
+		{
+			"name": "storage.modifier",
+			"match": "\\b(dispatch|inject|to|extends)\\b"
+		},
+		{
+			"name": "entity.name.type",
+			"match": "\\b(any|boolean|string|byte|short|int|long|float|double)\\b"
+		},
+		{
+			"name": "comment.line",
+			"begin": "//",
+			"end": "\n"
+		},
+		{
+			"name": "constant.numeric",
+			"match": "\\b[0-9]+\\b"
+		},
+		{
+			"name": "string.quoted",
+			"begin": "\"",
+			"end": "\""
+		},
+		{
+			"begin": "(#)\\[",
+			"end": "\\]",
+			"beginCaptures": {
+				"1": { "name": "meta.preprocessor" }
+			},
+			"patterns": [
+				{
+					"name": "entity.name.function",
+					"match": "(?<=\\[)[A-Za-z0-9_]+(?=[={(\\]])"
+				},
+				{
+					"name": "string.quoted",
+					"begin": "\"",
+					"end": "\""
+				}
+			]
+		},
+		{
+			"begin": "([a-z0-9_.-]+:[a-z0-9_.-]+)\\[",
+			"end": "\\]",
+			"beginCaptures": {
+				"1": { "name": "entity.name.function" }
+			},
+			"patterns": [
+				{
+					"name": "variable.parameter",
+					"match": "[a-z0-9_.-]+:[a-z0-9_.-]+"
+				}
+			]
+		},
+		{
+			"name": "entity.name.function",
+			"match": "\\b[a-z0-9_.-]+:[a-z0-9_.-]+"
+		},
+		{
+			"name": "variable",
+			"match": "(?<!type\\s+)\\b[A-Za-z_][A-Za-z0-9_]* *(?=(\\?:|:(?!:)|=) *)"
+		},
+		{
+			"name": "variable",
+			"match": "(?<=\\[)[A-Za-z0-9_]+(?=\\[)"
+		},
+		{
+			"name": "entity.name.type",
+			"match": "(::)?[A-Za-z_](::|[A-Za-z0-9_])*"
+		}
+	]
+}
