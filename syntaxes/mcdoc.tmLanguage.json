@@ -5,7 +5,7 @@
 	"patterns": [
 		{
 			"name": "keyword.control",
-			"match": "\\b(type|struct|enum)\\b"
+			"match": "\\b(use|type|struct|enum)\\b"
 		},
 		{
 			"name": "storage.modifier",
@@ -39,6 +39,10 @@
 				{
 					"name": "entity.name.function",
 					"match": "(?<=\\[)[A-Za-z0-9_]+(?=[={(\\]])"
+				},
+				{
+					"name": "entity.name.type",
+					"match": "[A-Z][A-Za-z0-9_]*"
 				},
 				{
 					"name": "string.quoted",
