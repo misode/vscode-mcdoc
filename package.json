@@ -2,12 +2,12 @@
     "name": "vscode-mcdoc",
     "displayName": "Mcdoc Syntax Highlighting",
     "description": "Syntax highlighting for mcdoc files",
-    "version": "1.0.0",
-	"publisher": "Misodee",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/misode/vscode-mcdoc.git"
-	},
+    "version": "1.0.1",
+    "publisher": "Misodee",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/misode/vscode-mcdoc.git"
+    },
     "engines": {
         "vscode": "^1.53.0"
     },
@@ -15,16 +15,24 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "mcdoc",
-            "aliases": ["mcdoc"],
-            "extensions": [".mcdoc"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "mcdoc",
-            "scopeName": "source.mcdoc",
-            "path": "./syntaxes/mcdoc.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "mcdoc",
+                "aliases": [
+                    "mcdoc"
+                ],
+                "extensions": [
+                    ".mcdoc"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "mcdoc",
+                "scopeName": "source.mcdoc",
+                "path": "./syntaxes/mcdoc.tmLanguage.json"
+            }
+        ]
     }
 }
